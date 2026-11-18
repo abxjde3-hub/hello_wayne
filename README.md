@@ -1,6 +1,6 @@
 # hello_wayne - Aprendendo Kernel na pratica
 
-Quatro projetos de Kernel feitos do zero, rodando de verdade no Linux.
+Cinco projetos de Kernel feitos do zero, rodando de verdade no Linux.
 
 ## Projeto 1 - hello_wayne
 
@@ -67,6 +67,27 @@ Exemplo:
     sudo chmod 666 /dev/wayne
     echo "OLA KERNEL" | sudo tee /dev/wayne
     cat /dev/wayne
+
+## Projeto 5 - WAYNE SYSFS 5.0
+
+Controle do Kernel pelo /sys, igual driver de verdade faz.
+
+Arquivos criados:
+- /sys/kernel/wayne/modo (le e escreve)
+- /sys/kernel/wayne/mensagem (le e escreve)
+- /sys/kernel/wayne/contador (so le)
+- /sys/kernel/wayne/versao (so le)
+
+Aprendizado: kobject_create_and_add, sysfs_create_group, __ATTR
+
+Exemplo:
+
+    cd projeto5-sysfs
+    make
+    sudo insmod wayne_sysfs.ko
+    ls -l /sys/kernel/wayne/
+    echo "modo turbo" | sudo tee /sys/kernel/wayne/modo
+    cat /sys/kernel/wayne/contador
 
 ## Como compilar no WSL
 
