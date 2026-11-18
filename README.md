@@ -1,6 +1,6 @@
 # hello_wayne - Aprendendo Kernel na pratica
 
-Cinco projetos de Kernel feitos do zero, rodando de verdade no Linux.
+Seis projetos de Kernel feitos do zero, rodando de verdade no Linux.
 
 ## Projeto 1 - hello_wayne
 
@@ -88,6 +88,25 @@ Exemplo:
     ls -l /sys/kernel/wayne/
     echo "modo turbo" | sudo tee /sys/kernel/wayne/modo
     cat /sys/kernel/wayne/contador
+
+## Projeto 6 - WAYNE NET 6.0
+
+Gancho no Kernel que ve todos os pacotes de rede, igual firewall faz.
+
+Conta ao vivo:
+- Total de pacotes
+- TCP, UDP, ICMP (ping), Outros
+- Ultimo IP origem
+
+Aprendizado: netfilter, NF_INET_PRE_ROUTING, ip_hdr, nf_register_net_hook
+
+Exemplo:
+
+    cd projeto6-net
+    make
+    sudo insmod wayne_net.ko
+    ping -c 3 8.8.8.8
+    cat /proc/wayne_net
 
 ## Como compilar no WSL
 
