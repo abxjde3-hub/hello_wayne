@@ -4,26 +4,41 @@ case "$1" in
   --help|-h|"")
     echo "Wayne CLI - Seu primeiro driver de Kernel"
     echo ""
-    echo "Uso: wayne [comando]"
+    echo "Uso: wayne [comando] [mensagem]"
     echo ""
     echo "Comandos:"
-    echo "  wayne            Mostra mensagem do Kernel"
-    echo "  wayne status     Mostra status do modulo"
-    echo "  wayne --help     Mostra essa ajuda"
-    echo "  wayne --version  Mostra a versao"
+    echo "  wayne                    Mostra ajuda"
+    echo "  wayne \"mensagem\"         Escreve no Kernel"
+    echo "  wayne status             Mostra status do modulo"
+    echo "  wayne count              Conta leituras"
+    echo "  wayne reset              Zera contador"
+    echo "  wayne --help             Mostra essa ajuda"
+    echo "  wayne --version          Mostra a versao"
     echo ""
-    echo "Exemplo: wayne status"
+    echo "Exemplos:"
+    echo "  wayne \"Hello Kernel\""
+    echo "  wayne status"
+    echo "  wayne count"
     ;;
   status)
     echo "=== WAYNE STATUS ==="
     cat /proc/wayne
     echo "Modulo: carregado no boot ✅"
     ;;
+  count)
+    echo -n "Leituras: "
+    cat /proc/wayne_count
+    ;;
+  reset)
+    echo "reset" > /proc/wayne_reset
+    echo "Contador zerado, Mestre!"
+    ;;
   --version|-v)
-    echo "wayne 1.0.0 - Kernel Module by Wayne"
+    echo "wayne 2.0.0 - Kernel Module by Wayne"
     ;;
   *)
-    echo "Comando desconhecido: $1"
-    echo "Digite: wayne --help"
+    echo "$*" > /proc/wayne
+    echo -n "Nova mensagem: "
+    cat /proc/wayne
     ;;
 esac
