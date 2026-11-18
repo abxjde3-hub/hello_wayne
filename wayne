@@ -1,14 +1,29 @@
 #!/bin/bash
-if [ -z "$1" ]; then
-  cat /proc/wayne
-elif [ "$1" == "count" ]; then
-  echo -n "Leituras: "
-  cat /proc/wayne_count
-elif [ "$1" == "reset" ]; then
-  echo "reset" > /proc/wayne_reset
-  echo "Contador zerado, Mestre!"
-else
-  echo "$*" > /proc/wayne
-  echo -n "Nova mensagem: "
-  cat /proc/wayne
-fi
+
+case "$1" in
+  --help|-h|"")
+    echo "Wayne CLI - Seu primeiro driver de Kernel"
+    echo ""
+    echo "Uso: wayne [comando]"
+    echo ""
+    echo "Comandos:"
+    echo "  wayne            Mostra mensagem do Kernel"
+    echo "  wayne status     Mostra status do modulo"
+    echo "  wayne --help     Mostra essa ajuda"
+    echo "  wayne --version  Mostra a versao"
+    echo ""
+    echo "Exemplo: wayne status"
+    ;;
+  status)
+    echo "=== WAYNE STATUS ==="
+    cat /proc/wayne
+    echo "Modulo: carregado no boot ✅"
+    ;;
+  --version|-v)
+    echo "wayne 1.0.0 - Kernel Module by Wayne"
+    ;;
+  *)
+    echo "Comando desconhecido: $1"
+    echo "Digite: wayne --help"
+    ;;
+esac
