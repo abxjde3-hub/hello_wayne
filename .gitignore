@@ -2,7 +2,7 @@
 *.ko
 *.mod
 *.mod.c
-*.symvers
-*.order
-.mod/
-.cache.mk
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
