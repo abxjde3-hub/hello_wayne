@@ -1,6 +1,24 @@
-*.ko
+# Arquivos de compilacao do Kernel - nao subir pro GitHub
 *.o
+*.ko
 *.mod
 *.mod.c
+*.mod.o
+*.cmd
+.*.cmd
+Module.symvers
+modules.order
+.tmp_versions/
 *.order
 *.symvers
+
+# Arquivos gerados pelo wayne nos testes
+conta
+escreve
+zera
+novo*
+
+# Sistema
+.DS_Store
+*.swp
+*.bak
