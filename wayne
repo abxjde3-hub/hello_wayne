@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+  cat /proc/wayne
+elif [ "$1" == "count" ]; then
+  echo -n "Leituras: "
+  cat /proc/wayne_count
+elif [ "$1" == "reset" ]; then
+  echo "reset" > /proc/wayne_reset
+  echo "Contador zerado, Mestre!"
+else
+  echo "$*" > /proc/wayne
+  echo -n "Nova mensagem: "
+  cat /proc/wayne
+fi
