@@ -1,6 +1,6 @@
 # hello_wayne - Aprendendo Kernel na pratica
 
-Tres projetos de Kernel feitos do zero, rodando de verdade no Linux.
+Quatro projetos de Kernel feitos do zero, rodando de verdade no Linux.
 
 ## Projeto 1 - hello_wayne
 
@@ -50,6 +50,23 @@ Exemplo:
     make
     sudo insmod wayne_timer.ko
     watch -n 1 cat /proc/wayne_timer
+
+## Projeto 4 - WAYNE CHAR DEVICE 4.0
+
+Driver de verdade com dispositivo em /dev/wayne.
+
+- open, release, read, write
+- ioctl CLEAR e GET_COUNT
+- major dinamico, class_create, device_create
+
+Exemplo:
+
+    cd projeto4-chardev
+    make
+    sudo insmod wayne_chardev.ko
+    sudo chmod 666 /dev/wayne
+    echo "OLA KERNEL" | sudo tee /dev/wayne
+    cat /dev/wayne
 
 ## Como compilar no WSL
 
