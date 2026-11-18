@@ -1,0 +1,1 @@
+savedcmd_wayne_monitor.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /home/waynewayne/WSL2-Linux-Kernel/scripts/module.lds -o wayne_monitor.ko wayne_monitor.o wayne_monitor.mod.o .module-common.o
