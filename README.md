@@ -1,6 +1,6 @@
 # hello_wayne - Aprendendo Kernel na pratica
 
-Seis projetos de Kernel feitos do zero, rodando de verdade no Linux.
+Sete projetos de Kernel feitos do zero, rodando de verdade no Linux.
 
 ## Projeto 1 - hello_wayne
 
@@ -107,6 +107,27 @@ Exemplo:
     sudo insmod wayne_net.ko
     ping -c 3 8.8.8.8
     cat /proc/wayne_net
+
+## Projeto 7 - WAYNE ULTIMATE 7.0 - FINAL BOSS
+
+Driver completo que junta tudo em um modulo so.
+
+- /proc/wayne_ultimate - uptime, timer, processos, memoria, modo, mensagem
+- /dev/wayne_final - char device com read, write, ioctl
+- /sys/kernel/wayne_final/ - modo, mensagem, contador, timer
+- Timer interno disparando a cada 1s
+
+Aprendizado: proc + timer + char device + sysfs juntos
+
+Exemplo:
+
+    cd projeto7-final
+    make
+    sudo insmod wayne_ultimate.ko
+    sudo chmod 666 /dev/wayne_final
+    echo "FINAL BOSS DOMINADO" | sudo tee /dev/wayne_final
+    echo "modo ultimate" | sudo tee /sys/kernel/wayne_final/modo
+    cat /proc/wayne_ultimate
 
 ## Como compilar no WSL
 
