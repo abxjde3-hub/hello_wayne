@@ -54,4 +54,5 @@ function ligarDemo(){
   if(g){ g.innerHTML=''; for(let i=1;i<=20;i++){ g.innerHTML+='<div class="conectado" style="padding:6px;margin:4px">demo - aparelho '+i+' | bateria '+(90-i)+' % | ping '+(10+i)+'ms | Brasil</div>'; } }
 }
 </script>
+<div id="labs" style="background:#e8f5e9;padding:8px;border-radius:8px;margin-top:10px"><b>Modo laboratorio - multi laboratorio</b><p>So conecta se o wifi estiver na lista. Fora do laboratorio, nao conecta.</p><ul><li>laboratorio 1 - lab-casa - autorizado</li><li>laboratorio 2 - lab-loja - autorizado</li><li>wifi fora da lista - bloqueado</li></ul><p>Log: aparelho conecta, verifica wifi, se estiver na lista, conecta. Se nao estiver, mostra fora do laboratorio.</p></div>
 </body></html>
