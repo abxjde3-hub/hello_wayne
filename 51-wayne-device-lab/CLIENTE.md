@@ -26,3 +26,10 @@
 ### Versao atual:
 - v5.6 - README limpo - Agente IA
 - Proximo: v5.7 - versao final para entrega
+
+## v6.6 - pronto para cliente final, ambiente real
+- v6.3: grade esquerda, espelho direita, borda verde, topo Tela ao vivo | Brasil | FPS | 9:20 Portrait | Silent mode.
+- v6.4: modo demonstracao, 20 aparelhos falsos, barra amarela, sem aparelho real, para mostrar sem aparelho real.
+- v6.5: modo laboratorio multi, lista wifi autorizado: lab-casa, lab-loja. Fora do laboratorio, nao conecta.
+- Permissoes: pede permitir na tela, com log, com botao de desligar. Nome vem do APK, nao fixo.
+- Ambiente real: quando pronto e documentado, roda com APK real, autorizacao real, wifi real do laboratorio do cliente.
