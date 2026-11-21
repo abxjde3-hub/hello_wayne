@@ -46,4 +46,12 @@ else{r.innerHTML='Agente: Entendi: "'+document.getElementById('pergunta').value+
 go(1);
 </script>
 </div><div class="espelho"><b>Espelho - 1 dispositivo ao vivo</b><p>Foto, nao video ao vivo o tempo todo. Clica em 1 para ver ao vivo. Nome vem do APK. Laboratorio autorizado.</p></div></div>
+<div id="demo-bar" style="background:#fff3cd;padding:8px;border-radius:8px;margin-top:10px"><b>Modo demonstracao - aparelhos falsos</b> <button onclick="ligarDemo()">Ligar demonstracao</button> <span id="demo-msg">Desligado - modo real, nome vem do APK</span></div>
+<script>
+function ligarDemo(){
+  document.getElementById('demo-msg').innerText='Ligado - 20 aparelhos falsos, de mentira, para mostrar ao cliente. Nao conecta em aparelho real.';
+  let g=document.querySelector('.grade');
+  if(g){ g.innerHTML=''; for(let i=1;i<=20;i++){ g.innerHTML+='<div class="conectado" style="padding:6px;margin:4px">demo - aparelho '+i+' | bateria '+(90-i)+' % | ping '+(10+i)+'ms | Brasil</div>'; } }
+}
+</script>
 </body></html>
