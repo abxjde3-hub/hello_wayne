@@ -3,8 +3,18 @@
 <title>WAYNE TOOL - AGENTE IA - Alem dos convencionais</title>
 <style>
 body{margin:0;font-family:Arial;background:#0f0f1a;color:#fff;display:flex;font-size:15px}aside{width:210px;background:#151528;padding:18px}main{flex:1;padding:18px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:#1e1e3a;border-radius:12px;padding:12px;cursor:pointer}.on{color:#4ade80}.screen{height:70px;border-radius:8px;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:18px}.locked{background:#333!important}.ai{width:360px;background:#151528;padding:18px}.controls button,.controls input{background:#2a2a4a;color:#fff;padding:9px;border-radius:8px;border:1px solid #444;font-size:15px}.detalhe{background:#1e1e3a;padding:14px;border-radius:12px;margin-top:12px;line-height:1.6}.espelho{height:140px;background:#1e293b;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin:10px 0;text-align:center}.logs{background:#0a0a14;padding:10px;border-radius:10px;height:100px;overflow:auto;font-size:13px;margin-top:10px}.agente{background:#2e1065;padding:12px;border-radius:12px;margin-top:12px;border:1px solid #a78bfa}.agente input{width:100%;padding:9px;border-radius:8px;border:1px solid #a78bfa;background:#1e1e3a;color:#fff;font-size:14px;margin:8px 0}.agente button{background:#a78bfa;color:#000;font-weight:700;padding:9px;border-radius:8px;border:none;width:100%;cursor:pointer}.resposta{background:#0a0a14;padding:10px;border-radius:8px;margin-top:8px;font-size:13px;line-height:1.5;min-height:60px}
-</style></head>
+</style><style>
+/* v6.3 - layout laboratorio: grade esquerda, espelho direita */
+.layout{display:flex;gap:12px}
+.grade{flex:1}
+.espelho{flex:1;border:2px solid #22ff88;border-radius:12px;padding:10px}
+.topo-live{background:#0b1220;color:#fff;padding:8px;border-radius:8px}
+.conectado{border:2px solid #22ff88 !important}
+</style>
+</head>
 <body>
+<div class="topo-live">Tela ao vivo | Brasil | FPS: 13 | 9:20 Portrait | Silent mode | v6.3 - laboratorio</div>
+<div class="layout"><div class="grade">
 <aside><h2>WAYNE LAB</h2><p>Dispositivos</p><p>Clientes</p><p>Tela</p><p>Analise</p><p>Logs</p><p>Controle</p><p style="color:#4ade80">200 usuarios ativos</p><p style="color:#a78bfa">AGENTE IA - ON</p></aside>
 <main><h1>WAYNE TOOL - 200 ATIVOS - AGENTE IA</h1><p>ALEM DOS CONVENCIONAIS - Motor 50 + Agente IA que AGE</p><p><b>Usuarios ativos: 200</b></p>
 <div class="controls"><input id="busca" placeholder="Buscar Device..." oninput="go(1)"><button onclick="prev()">Anterior</button><span id="pagina"></span><button onclick="next()">Proxima</button><span id="total"></span><button onclick="modoIA()" style="background:#a78bfa;color:#000;font-weight:700">MODO IA - Verificar tudo</button></div>
@@ -35,4 +45,5 @@ else{r.innerHTML='Agente: Entendi: "'+document.getElementById('pergunta').value+
 }
 go(1);
 </script>
+</div><div class="espelho"><b>Espelho - 1 dispositivo ao vivo</b><p>Foto, nao video ao vivo o tempo todo. Clica em 1 para ver ao vivo. Nome vem do APK. Laboratorio autorizado.</p></div></div>
 </body></html>
