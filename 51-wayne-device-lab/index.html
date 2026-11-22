@@ -1,58 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8">
-<title>WAYNE TOOL - AGENTE IA - Alem dos convencionais</title>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Wayne Device Lab</title>
 <style>
-body{margin:0;font-family:Arial;background:#0f0f1a;color:#fff;display:flex;font-size:15px}aside{width:210px;background:#151528;padding:18px}main{flex:1;padding:18px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:#1e1e3a;border-radius:12px;padding:12px;cursor:pointer}.on{color:#4ade80}.screen{height:70px;border-radius:8px;background:#2563eb;display:flex;align-items:center;justify-content:center;font-size:18px}.locked{background:#333!important}.ai{width:360px;background:#151528;padding:18px}.controls button,.controls input{background:#2a2a4a;color:#fff;padding:9px;border-radius:8px;border:1px solid #444;font-size:15px}.detalhe{background:#1e1e3a;padding:14px;border-radius:12px;margin-top:12px;line-height:1.6}.espelho{height:140px;background:#1e293b;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;margin:10px 0;text-align:center}.logs{background:#0a0a14;padding:10px;border-radius:10px;height:100px;overflow:auto;font-size:13px;margin-top:10px}.agente{background:#2e1065;padding:12px;border-radius:12px;margin-top:12px;border:1px solid #a78bfa}.agente input{width:100%;padding:9px;border-radius:8px;border:1px solid #a78bfa;background:#1e1e3a;color:#fff;font-size:14px;margin:8px 0}.agente button{background:#a78bfa;color:#000;font-weight:700;padding:9px;border-radius:8px;border:none;width:100%;cursor:pointer}.resposta{background:#0a0a14;padding:10px;border-radius:8px;margin-top:8px;font-size:13px;line-height:1.5;min-height:60px}
-</style><style>
-/* v6.3 - layout laboratorio: grade esquerda, espelho direita */
-.layout{display:flex;gap:12px}
-.grade{flex:1}
-.espelho{flex:1;border:2px solid #22ff88;border-radius:12px;padding:10px}
-.topo-live{background:#0b1220;color:#fff;padding:8px;border-radius:8px}
-.conectado{border:2px solid #22ff88 !important}
+* { font-family: Arial, sans-serif; font-size: 28px; }
+body { background: #0a0f1e; color: white; margin: 0; }
+.topo { text-align: center; padding: 10px; }
+.grade { display: flex; }
+.menu { width: 220px; background: #111832; padding: 10px; }
+.painel { flex: 1; padding: 10px; }
+.cartao { background: #1a2342; border: 1px solid #2a3566; padding: 10px; margin: 5px; text-align: center; }
+button { font-family: Arial, sans-serif; font-size: 28px; }
 </style>
 </head>
 <body>
-<div class="topo-live">Tela ao vivo | Brasil | FPS: 13 | 9:20 Portrait | Silent mode | v6.3 - laboratorio</div>
-<div class="layout"><div class="grade">
-<aside><h2>WAYNE LAB</h2><p>Dispositivos</p><p>Clientes</p><p>Tela</p><p>Analise</p><p>Logs</p><p>Controle</p><p style="color:#4ade80">200 usuarios ativos</p><p style="color:#a78bfa">AGENTE IA - ON</p></aside>
-<main><h1>WAYNE TOOL - 200 ATIVOS - AGENTE IA</h1><p>ALEM DOS CONVENCIONAIS - Motor 50 + Agente IA que AGE</p><p><b>Usuarios ativos: 200</b></p>
-<div class="controls"><input id="busca" placeholder="Buscar Device..." oninput="go(1)"><button onclick="prev()">Anterior</button><span id="pagina"></span><button onclick="next()">Proxima</button><span id="total"></span><button onclick="modoIA()" style="background:#a78bfa;color:#000;font-weight:700">MODO IA - Verificar tudo</button></div>
-<div id="relatorio"></div>
-<div class="grid" id="grid"></div></main>
-<aside class="ai"><h2>DETALHE + AGENTE IA</h2>
-<div class="espelho" id="espelho">Clique em um device<br>para ver o espelho aqui</div>
-<div class="detalhe" id="detalhe">Clique em um device<br>para ver o detalhe aqui</div>
-<div style="margin-top:10px"><button onclick="acao('Bloquear')" style="background:#dc2626;color:#fff;padding:8px;border-radius:8px;border:none">Bloquear</button> <button onclick="acao('Desbloquear')" style="background:#16a34a;color:#fff;padding:8px;border-radius:8px;border:none">Desbloquear</button> <button onclick="acao('Tirar Print')" style="background:#2563eb;color:#fff;padding:8px;border-radius:8px;border:none">Tirar Print</button></div>
-<div class="agente"><b>AGENTE DE IA - WAYNE</b><br><small>Fala com ele! Ele entende e AGE!</small><input id="pergunta" placeholder="Ex: bloqueie todos com bateria baixa"><button onclick="agente()">Perguntar ao Agente</button><div class="resposta" id="resposta">Agente pronto!<br>Teste: bloqueie todos com bateria baixa<br>desbloqueie todos<br>mostre só os online<br>qual com bateria mais baixa?</div></div>
-<div class="logs" id="logs"><b>LOGS:</b><br>Pronto...</div>
-</aside>
+<div class="topo">WAYNE DEVICE LAB</div>
+<div class="grade">
+<div class="menu">
+<div>Clientes</div>
+<div>Tela</div>
+<div>Alertas</div>
+<div>Chamadas</div>
+<div>Bloquear</div>
+<div>Injecao</div>
+<div>Console</div>
+<div>Atividade</div>
+<div>Configuracoes</div>
+</div>
+<div class="painel">
+<div>Posso conectar?</div>
+<div>Vou mostrar so nome, bateria e ping.</div>
+<div class="cartao">POCO F5</div>
+<div class="cartao">Galaxy A51</div>
+<div class="cartao">Moto g84</div>
+<div class="cartao">A25 de lab</div>
+<div>Aparelho: <span id="nome">---</span></div>
+<div>Bateria: <span id="bateria">---</span></div>
+<div>Ping: <span id="ping">---</span></div>
+<button onclick="permitir()">Permitir</button>
+<button onclick="desconectar()">Desconectar</button>
+<button onclick="foto()">Foto</button>
+<button onclick="live()">1 Live</button>
+</div>
+</div>
 <script>
-let paginaAtual=1;let lista=[];let selecionado=null;
-for(let i=1;i<=200;i++){let num=String(i).padStart(3,'0');lista.push({nome:'Device '+num,modelo:i%2===0?'POCO F3':'Device '+num,locked:i%3===0,online:i%17!==0,bat:20+(i*13)%80,ping:100+(i*7)%200});}
-function log(msg){let l=document.getElementById('logs');l.innerHTML+='<br>'+new Date().toLocaleTimeString()+' - '+msg;l.scrollTop=l.scrollHeight;}
-function go(p){let arr=lista.filter(d=>d.nome.toLowerCase().includes(document.getElementById('busca').value.toLowerCase()));let totalPag=Math.ceil(arr.length/20)||1;if(p<1)p=1;if(p>totalPag)p=totalPag;paginaAtual=p;let fatia=arr.slice((p-1)*20,(p-1)*20+20);let grid=document.getElementById('grid');grid.innerHTML='';fatia.forEach(d=>{let div=document.createElement('div');div.className='card';div.onclick=()=>{selecionado=d;document.getElementById('espelho').innerHTML='9:20 Portrait<br><br>'+(d.locked?'TELA BLOQUEADA':'CELULAR ESPELHADO')+'<br><br>Connected';document.getElementById('detalhe').innerHTML='<b>'+d.modelo+'</b><br>Pais: Brasil<br>Instalado: 2025-10-20<br>Bateria: '+d.bat+' pct<br>Ping: '+d.ping+' ms<br>Bloqueado: '+(d.locked?'Sim':'Nao')+'<br>Online: '+(d.online?'Sim':'Nao');log('Selecionado '+d.nome);};div.innerHTML='<h3>'+d.nome+'</h3><p class="on">'+(d.online?'Online':'Offline')+'</p><div class="screen '+(d.locked?'locked':'')+'">'+(d.locked?'LOCK':'PHONE')+'</div><p>Bateria: '+d.bat+' pct</p>';grid.appendChild(div);});document.getElementById('pagina').textContent='Pagina '+paginaAtual+' de '+totalPag;document.getElementById('total').textContent='Total: '+arr.length;}
-function prev(){go(paginaAtual-1);}function next(){go(paginaAtual+1);}
-function modoIA(){let online=lista.filter(d=>d.online).length;let locked=lista.filter(d=>d.locked).length;let baixa=lista.filter(d=>d.bat<30).length;document.getElementById('relatorio').innerHTML='<div style="background:#14532d;padding:10px;border-radius:10px"><b>MODO IA:</b> Total: 200 | Online: '+online+' | Bloqueados: '+locked+' | Bateria baixa: '+baixa+'</div>';log('MODO IA verificou 200');}
-function acao(a){if(!selecionado){alert('Clique em um device primeiro!');return;}if(a==='Bloquear')selecionado.locked=true;if(a==='Desbloquear')selecionado.locked=false;log(a+' - '+selecionado.nome+' - OK');go(paginaAtual);}
-function agente(){let q=document.getElementById('pergunta').value.toLowerCase();let r=document.getElementById('resposta');if(!q){r.innerHTML='Escreva um comando! Ex: bloqueie todos com bateria baixa';return;}
-if(q.includes('bloque')&&q.includes('bateria')){let alvos=lista.filter(d=>d.bat<30);alvos.forEach(d=>d.locked=true);r.innerHTML='Agente: Bloqueei '+alvos.length+' devices com bateria baixa! Eles estavam com menos de 30 pct! Verifique no grid - ficaram cinza LOCK!';log('AGENTE bloqueou '+alvos.length+' com bateria baixa');go(paginaAtual);}
-else if(q.includes('desbloque')){lista.forEach(d=>d.locked=false);r.innerHTML='Agente: Desbloqueei todos os 200 devices! Todos voltaram para PHONE azul!';log('AGENTE desbloqueou todos');go(paginaAtual);}
-else if(q.includes('online')){let on=lista.filter(d=>d.online).length;r.innerHTML='Agente: Tem '+on+' devices online de 200!';log('AGENTE contou online: '+on);}
-else if(q.includes('bateria')&&q.includes('baixa')){let m=lista.reduce((a,b)=>a.bat<b.bat?a:b);r.innerHTML='Agente: O device com bateria mais baixa e <b>'+m.nome+' - '+m.modelo+'</b> com <b>'+m.bat+' pct</b>! Clique nele!';selecionado=m;document.getElementById('detalhe').innerHTML='<b>'+m.modelo+'</b><br>Pais: Brasil<br>Bateria: '+m.bat+' pct<br>Ping: '+m.ping+' ms<br>Bloqueado: '+(m.locked?'Sim':'Nao');log('AGENTE achou menor bateria: '+m.nome);}
-else if(q.includes('relat')||q.includes('verific')){let online=lista.filter(d=>d.online).length;let locked=lista.filter(d=>d.locked).length;r.innerHTML='Agente: Relatorio - Total: 200 | Online: '+online+' | Bloqueados: '+locked+' | Pronto para o cliente!';log('AGENTE fez relatorio');}
-else{r.innerHTML='Agente: Entendi: "'+document.getElementById('pergunta').value+'" - Eu posso: bloquear com bateria baixa, desbloquear todos, mostrar online, achar menor bateria, fazer relatorio! Tente um desses!';}
-}
-go(1);
+function permitir(){document.getElementById("nome").textContent="Aparelho do lab";}
+function desconectar(){document.getElementById("nome").textContent="---";}
+function foto(){alert("Foto clicada");}
+function live(){alert("1 Live clicada");}
 </script>
-</div><div class="espelho"><b>Espelho - 1 dispositivo ao vivo</b><p>Foto, nao video ao vivo o tempo todo. Clica em 1 para ver ao vivo. Nome vem do APK. Laboratorio autorizado.</p></div></div>
-<div id="demo-bar" style="background:#fff3cd;padding:8px;border-radius:8px;margin-top:10px"><b>Modo demonstracao - aparelhos falsos</b> <button onclick="ligarDemo()">Ligar demonstracao</button> <span id="demo-msg">Desligado - modo real, nome vem do APK</span></div>
-<script>
-function ligarDemo(){
-  document.getElementById('demo-msg').innerText='Ligado - 20 aparelhos falsos, de mentira, para mostrar ao cliente. Nao conecta em aparelho real.';
-  let g=document.querySelector('.grade');
-  if(g){ g.innerHTML=''; for(let i=1;i<=20;i++){ g.innerHTML+='<div class="conectado" style="padding:6px;margin:4px">demo - aparelho '+i+' | bateria '+(90-i)+' % | ping '+(10+i)+'ms | Brasil</div>'; } }
-}
-</script>
-<div id="labs" style="background:#e8f5e9;padding:8px;border-radius:8px;margin-top:10px"><b>Modo laboratorio - multi laboratorio</b><p>So conecta se o wifi estiver na lista. Fora do laboratorio, nao conecta.</p><ul><li>laboratorio 1 - lab-casa - autorizado</li><li>laboratorio 2 - lab-loja - autorizado</li><li>wifi fora da lista - bloqueado</li></ul><p>Log: aparelho conecta, verifica wifi, se estiver na lista, conecta. Se nao estiver, mostra fora do laboratorio.</p></div>
-</body></html>
+</body>
+</html>
