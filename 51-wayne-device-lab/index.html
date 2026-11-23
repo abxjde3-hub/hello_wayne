@@ -42,11 +42,16 @@ button { font-family: Arial, sans-serif; font-size: 28px; }
 <button onclick="desconectar()">Desconectar</button>
 <button onclick="foto()">Foto</button>
 <button onclick="live()">1 Live</button>
+<button onclick="proteger()">Proteger</button>
+<button onclick="desproteger()">Desproteger</button>
+<div id="mascara" style="display:none;background:black;color:white;padding:10px;">Protegido - mascara de protecao</div>
 </div>
 </div>
 <script>
 function permitir(){document.getElementById("nome").textContent="Aparelho do lab";}
 function desconectar(){document.getElementById("nome").textContent="---";}
+function proteger(){document.getElementById("mascara").style.display="block";}
+function desproteger(){document.getElementById("mascara").style.display="none";}
 function foto(){alert("Foto clicada");}
 function live(){alert("1 Live clicada");}
 </script>
