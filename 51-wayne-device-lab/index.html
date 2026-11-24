@@ -31,10 +31,10 @@ button { font-family: sans-serif; font-size: 28px; }
 <div class="painel">
 <div>Posso conectar?</div>
 <div>Vou mostrar só nome, bateria e ping.</div>
-<div class="cartao">📱 POCO F5</div>
-<div class="cartao">📱 Galaxy A51</div>
-<div class="cartao">📱 Moto g84</div>
-<div class="cartao">📱 A25 de lab</div>
+<div class="cartao" onclick="selecionar('POCO F5','87%','32ms')" style="cursor:pointer;">📱 POCO F5</div>
+<div class="cartao" onclick="selecionar('Galaxy A51','72%','45ms')" style="cursor:pointer;">📱 Galaxy A51</div>
+<div class="cartao" onclick="selecionar('Moto g84','65%','58ms')" style="cursor:pointer;">📱 Moto g84</div>
+<div class="cartao" onclick="selecionar('A25 de lab','91%','28ms')" style="cursor:pointer;">📱 A25 de lab</div>
 <div>Aparelho: <span id="aparelho">---</span></div>
 <div>Bateria: <span id="bateria">---</span></div>
 <div>Ping: <span id="ping">---</span></div>
@@ -54,6 +54,7 @@ function proteger(){document.getElementById("mascara").style.display="block";}
 function desproteger(){document.getElementById("mascara").style.display="none";}
 function foto(){alert("Foto clicada");}
 function live(){alert("1 Live clicada");}
+function selecionar(n,b,p){document.getElementById("aparelho").textContent=n;document.getElementById("bateria").textContent=b;document.getElementById("ping").textContent=p;}
 </script>
 </body>
 </html>
@@ -61,4 +62,5 @@ function live(){alert("1 Live clicada");}
 <script>
 function permitir(){document.getElementById("aparelho").textContent="POCO F5";document.getElementById("bateria").textContent="87%";document.getElementById("ping").textContent="32ms";}
 function desconectar(){document.getElementById("aparelho").textContent="---";document.getElementById("bateria").textContent="---";document.getElementById("ping").textContent="---";desproteger();}
+function selecionar(n,b,p){document.getElementById("aparelho").textContent=n;document.getElementById("bateria").textContent=b;document.getElementById("ping").textContent=p;}
 </script>
