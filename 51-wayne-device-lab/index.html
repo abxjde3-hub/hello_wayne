@@ -52,9 +52,11 @@ function permitir(){document.getElementById("aparelho").textContent="POCO F5";do
 function desconectar(){document.getElementById("nome").textContent="---";}
 function proteger(){protegido=true;document.getElementById("mascara").style.display="block";document.getElementById("status").textContent="🛡️ Protegido - tudo travado";}
 function desproteger(){protegido=false;document.getElementById("mascara").style.display="none";document.getElementById("status").textContent="";}
-function foto(){alert("Foto clicada");}
-function live(){alert("1 Live clicada");}
+
+
 function selecionar(n,b,p){if(protegido){document.getElementById("status").textContent="🔒 Travado - desproteja para trocar";return;}document.getElementById("aparelho").textContent=n;document.getElementById("bateria").textContent=b;document.getElementById("ping").textContent=p;}
+function foto(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📸 Foto tirada de "+document.getElementById("aparelho").textContent;}
+function live(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📹 Live ligada - "+document.getElementById("aparelho").textContent;}
 </script>
 <div id="status" style="margin-top:10px;font-weight:bold;"></div>
 </body>
@@ -64,4 +66,6 @@ function selecionar(n,b,p){if(protegido){document.getElementById("status").textC
 function permitir(){document.getElementById("aparelho").textContent="POCO F5";document.getElementById("bateria").textContent="87%";document.getElementById("ping").textContent="32ms";}
 function desconectar(){document.getElementById("aparelho").textContent="---";document.getElementById("bateria").textContent="---";document.getElementById("ping").textContent="---";desproteger();}
 function selecionar(n,b,p){if(protegido){document.getElementById("status").textContent="🔒 Travado - desproteja para trocar";return;}document.getElementById("aparelho").textContent=n;document.getElementById("bateria").textContent=b;document.getElementById("ping").textContent=p;}
+function foto(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📸 Foto tirada de "+document.getElementById("aparelho").textContent;}
+function live(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📹 Live ligada - "+document.getElementById("aparelho").textContent;}
 </script>
