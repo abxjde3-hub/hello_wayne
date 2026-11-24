@@ -40,8 +40,8 @@ button { font-family: sans-serif; font-size: 28px; }
 <div>Ping: <span id="ping">---</span></div>
 <button   onclick="permitir()">Permitir</button>
 <button   onclick="desconectar()">Desconectar</button>
-<button onclick="foto()" onclick="foto()">Foto</button>
-<button onclick="live()" onclick="live()">1 Live</button>
+<button   onclick="foto()">Foto</button>
+<button   onclick="live()">1 Live</button>
 <button onclick="proteger()">Proteger</button>
 <button onclick="desproteger()">Desproteger</button>
 <div id="mascara" style="display:none;background:black;border:2px solid white;color:white;padding:10px;text-align:center;border-radius:12px;">🛡️ Protegido - Protecao ativa</div>
@@ -57,8 +57,10 @@ function desproteger(){protegido=false;document.getElementById("mascara").style.
 function selecionar(n,b,p){if(protegido){document.getElementById("status").textContent="🔒 Travado - desproteja para trocar";return;}document.getElementById("aparelho").textContent=n;document.getElementById("bateria").textContent=b;document.getElementById("ping").textContent=p;}
 function foto(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📸 Foto tirada de "+document.getElementById("aparelho").textContent;}
 function live(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📹 Live ligada - "+document.getElementById("aparelho").textContent;}
+function foto(){document.getElementById("status").textContent="📸 Foto tirada de "+document.getElementById("aparelho").textContent+" - Bateria "+document.getElementById("bateria").textContent+" - Ping "+document.getElementById("ping").textContent;}
+function live(){document.getElementById("status").textContent="📹 Live ligada - "+document.getElementById("aparelho").textContent+" - Bateria "+document.getElementById("bateria").textContent+" - Ping "+document.getElementById("ping").textContent;}
 </script>
-<div id="status" style="margin-top:10px;font-weight:bold;"></div>
+<div id="status" style="font-size:28px;font-weight:bold;color:red;border:3px solid red;padding:10px;margin:10px;">AGUARDANDO CLIQUE</div>
 </body>
 </html>
 
@@ -68,4 +70,6 @@ function desconectar(){document.getElementById("aparelho").textContent="---";doc
 function selecionar(n,b,p){if(protegido){document.getElementById("status").textContent="🔒 Travado - desproteja para trocar";return;}document.getElementById("aparelho").textContent=n;document.getElementById("bateria").textContent=b;document.getElementById("ping").textContent=p;}
 function foto(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📸 Foto tirada de "+document.getElementById("aparelho").textContent;}
 function live(){if(protegido){document.getElementById("status").textContent="🔒 Travado";return;}document.getElementById("status").textContent="📹 Live ligada - "+document.getElementById("aparelho").textContent;}
+function foto(){document.getElementById("status").textContent="📸 Foto tirada de "+document.getElementById("aparelho").textContent+" - Bateria "+document.getElementById("bateria").textContent+" - Ping "+document.getElementById("ping").textContent;}
+function live(){document.getElementById("status").textContent="📹 Live ligada - "+document.getElementById("aparelho").textContent+" - Bateria "+document.getElementById("bateria").textContent+" - Ping "+document.getElementById("ping").textContent;}
 </script>
